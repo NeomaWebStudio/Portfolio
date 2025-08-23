@@ -1,0 +1,73 @@
+// src/components/ContactPage.module.scss
+// 🔹 Основний контейнер сторінки
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+// 🔹 Блок форми контакту
+.contactFormWrapper {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: slideInLeft 0.9s ease-out forwards; // 🔸 Анімація появи зліва
+  animation-delay: 0.2s;
+}
+
+// 🔹 Блок контактної інформації
+.contactInfoWrapper {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: slideInRight 0.9s ease-out forwards; // 🔸 Анімація появи справа
+  animation-delay: 0.2s;
+}
+
+// 🔹 Анімації
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// 🔹 Медіа-запити для десктопів
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .contactFormWrapper {
+    width: 48%;
+    margin: 0;
+  }
+
+  .contactInfoWrapper {
+    width: 48%;
+    margin: 0;
+  }
+}
