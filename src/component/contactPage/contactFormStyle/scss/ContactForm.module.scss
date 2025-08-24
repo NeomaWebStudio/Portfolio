@@ -1,0 +1,149 @@
+// src/components/ContactForm.module.scss
+
+/* 1. Основні стилі форми */
+.contactForm {
+  padding: 20px; // Внутрішні відступи всередині форми
+  background: #1e293b; // Темний фон форми
+  color: white; // Колір тексту всередині форми
+  border: 1px solid #334155; // Тонка рамка форми
+  border-radius: 8px; // Закруглені кути
+  display: flex; // Використовуємо flex для вертикального розташування
+  flex-direction: column; // Колонки йдуть зверху вниз
+  gap: 10px; // Відстань між елементами всередині формиa
+
+  h2 {
+    font-size: 16px; // Розмір заголовка
+    font-weight: 400; // Тонкий шрифт
+    margin: 5px 0; // Відступи зверху та знизу
+  }
+
+  label {
+    display: block; // Кожна підписка на новий рядок
+    margin: 0 0 -8px 0; // Відступ знизу для підписки
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  input,
+  textarea {
+    padding: 6px; // Внутрішні відступи всередині полів
+    border-radius: 5px; // Закруглені кути
+    border: 1px solid #334155; // Колір рамки
+    width: 100%; // Поля займають всю ширину контейнера
+    box-sizing: border-box; // Включає padding і border у ширину
+    background-color: #243143; // Трохи світліший темний фон для полів
+    color: #f8fafc; // Колір тексту у полях
+
+    &::placeholder {
+      color: #94a3b8; // Колір тексту-підказки
+    }
+  }
+
+  textarea {
+    resize: vertical; // Користувач може змінювати висоту textarea
+    min-height: 100px; // Мінімальна висота textarea
+  }
+}
+
+/* Рядок для полів ім'я/прізвище */
+.formRow {
+  display: flex;
+  justify-content: space-between; // Розташування полів з відстанню
+  gap: 15px; // Відстань між полями
+}
+
+/* Контейнер для одного поля форми */
+.formField {
+  flex: 1; // Поля займають однакову ширину
+  display: flex;
+  flex-direction: column; // Рядки всередині поля розташовані вертикально
+
+  span {
+    display: block; // Для підпису
+    margin-bottom: 8px; // Відстань до input
+  }
+}
+
+/* Контейнер для вибору типу проекту */
+.projectContainer {
+  position: relative; // Щоб опції можна було позиціонувати відносно кнопки
+}
+
+/* Стиль для повідомлень про помилку */
+.errorMessage {
+  color: #ff3535; // Червоний для помилок
+  font-size: 12px;
+  margin-top: 1px;
+  text-align: left;
+}
+
+/* 2. Кнопки */
+.submitButton {
+  padding: 12px; // Внутрішні відступи кнопки
+  border: none;
+  border-radius: 5px;
+  margin-top: 18px;
+  background-color: #ff6b35; // Помаранчева кнопка
+  color: white;
+  cursor: pointer; // Курсор змінюється на руку
+  font-weight: bold;
+  transition: 0.3s; // Плавна анімація зміни кольору
+
+  &:hover {
+    background-color: #e96436; // Темніший колір при наведенні
+  }
+}
+
+.selectPole {
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #334155;
+  width: 100%;
+  margin-top: 8px;
+  box-sizing: border-box;
+  background-color: #243143; // Поле вибору проекту
+  color: #f8fafc;
+  cursor: pointer;
+  text-align: left; // Текст ліворуч
+  outline: none;
+
+  &:hover {
+    background-color: #374151; // Темніший фон при наведенні
+  }
+
+  &:focus {
+    border: 2px solid #ff6b35; // Помаранчева рамка при фокусі
+  }
+}
+
+/* 3. Список опцій (випадаючий) */
+.optionContainer {
+  overflow: hidden; // Щоб контент не виступав за межі контейнера
+  max-height: 0; // Схований за замовчуванням
+  transition: max-height 0.3s ease-in-out; // Плавне відкриття/закриття
+
+  &.open {
+    border: 1px solid #334155;
+    max-height: 200px; // Максимальна висота при відкритті
+    padding: 5px 0;
+  }
+}
+
+.option {
+  padding: 6px 12px; // Внутрішні відступи для однієї опції
+  cursor: pointer;
+  color: #f8fafc;
+
+  &:hover {
+    background-color: #374151; // Підсвічування при наведенні
+  }
+}
+
+/* 4. Фокус для input та textarea */
+input,
+textarea {
+  &:focus {
+    outline: none; // При фокусі не показує стандартну рамку
+    border: 2px solid #ff6b35; // Помаранчева рамка при редагуванні
+  }
+}

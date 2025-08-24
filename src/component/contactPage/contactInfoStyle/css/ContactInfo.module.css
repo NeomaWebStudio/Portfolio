@@ -1,0 +1,107 @@
+@charset "UTF-8";
+.contactInfo {
+  color: #f8fafc;
+}
+.contactInfo .advantagesContainer {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #334155;
+}
+.contactInfo h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.contactInfo .advantagesList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.contactInfo .advantagesList li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #94a3b8;
+}
+.contactInfo .advantagesList li::before {
+  content: "•";
+  color: #ff6b35;
+  font-size: 20px;
+  line-height: 0;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.contactInfo .infoCards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  align-items: stretch;
+}
+.contactInfo .infoCards .card {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #334155;
+  height: 100%;
+  min-width: 150px;
+}
+.contactInfo .infoCards .card .iconCircle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 107, 53, 0.2);
+  margin-bottom: 10px;
+}
+.contactInfo .infoCards .card .icon {
+  color: #ff6b35;
+  font-size: 24px;
+}
+.contactInfo .infoCards .card p {
+  margin: 0;
+  font-size: 14px;
+  color: #94a3b8;
+}
+.contactInfo .infoCards .card p:first-of-type {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #f8fafc;
+}
+.contactInfo .infoCards .card a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 14px;
+}
+.contactInfo .infoCards .card .cta {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+.contactInfo .card a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 480px) {
+  .contactInfo .infoCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .contactInfo .advantagesContainer {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20%;
+  }
+  .contactInfo .advantagesContainer .infoCards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .contactInfo .advantagesContainer .infoCards .card {
+    min-width: 80%;
+    margin: 0, auto;
+  }
+}/*# sourceMappingURL=ContactInfo.module.css.map */

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.navigationContainer{
+	$neomaGradiend: linear-gradient(135deg, #FFB84D 0%, #FF6B9D 35%, #A855F7 70%, #4F9CF9 100%);
+	$border: #334155;
+	width: 100vw;
+	height: 64px;
+	display: flex;
+	align-items: center;
+	background: rgba(#0f172a61, 0.1);
+	font-family: "Inter", sans-serif;
+	position: fixed;
+	border-bottom: 0.0000001px solid rgba(177, 177, 177, 0.594);
+
+	.linkContainer{
+
+		display: flex;
+		gap: 32px;
+		list-style: none;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+
+		.link{
+			margin-right: 28px;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 21px;
+			position: relative;
+			cursor: pointer;
+			transition: color .35s linear;
+			transition: transform .30s linear;
+			color: rgb(215, 212, 212);
+			
+			&:hover{
+				color: #f8fafc;
+				transform: translateY(-2px);
+			}
+
+			&:hover::after{
+				transform: scale(1);
+				color: #f8fafc;
+			}
+
+			&::after{
+				content: '';
+				width: 100%;
+				height: 2px;
+				background: $neomaGradiend;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				transform: scale(0);
+				transform-origin: left center;
+				transition: transform .25s linear;
+
+				
+			}
+		}
+	}
+	.logo{
+		background: $neomaGradiend ;                // задаємо градієнт як фон
+  -webkit-background-clip: text;       // підрізаємо фон по тексту (WebKit)
+  -webkit-text-fill-color: transparent; // робимо сам текст прозорим
+  background-clip: text;               // підтримка інших браузерів
+  color: transparent; 
+		margin: 0 200px;
+		font-weight: 700;
+		line-height: 28px;
+		font-size: 21px;
+		cursor: pointer;
+	}
+}

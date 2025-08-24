@@ -1,0 +1,64 @@
+.container {
+  background-color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.contactFormWrapper {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: slideInLeft 0.9s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.contactInfoWrapper {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: slideInRight 0.9s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .contactFormWrapper {
+    width: 48%;
+    margin: 0;
+  }
+  .contactInfoWrapper {
+    width: 48%;
+    margin: 0;
+  }
+}/*# sourceMappingURL=ContactPage.module.css.map */
