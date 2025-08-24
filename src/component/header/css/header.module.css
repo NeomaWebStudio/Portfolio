@@ -4,6 +4,8 @@
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 .headerContainer .headerInnerContainer {
   display: flex;
@@ -90,6 +92,14 @@
 .headerContainer .headerInnerContainer .cardContainer .card .descCard {
   color: #94a3b8;
   margin-top: 5px;
+}
+.headerContainer .iconContainer {
+  position: absolute;
+  z-index: -1;
+}
+.headerContainer .fistIcon {
+  margin-left: 50px;
+  margin-top: 30px;
 }
 
 .dark {
