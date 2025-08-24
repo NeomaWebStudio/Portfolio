@@ -1,44 +1,45 @@
 // src/components/ContactForm.jsx
-"use client";
-import React, { useState } from "react";
-import styles from "./ContactForm.module.scss";
+"use client"; // Для Next.js: вказуємо, що цей компонент працює на клієнті (браузері)
+import React, { useState } from "react"; // Імпортуємо React та useState для стейтів
+import styles from "./ContactForm.module.scss"; // Імпортуємо CSS модуль для стилів
 
 const ContactForm = () => {
-  // Стейт для зберігання даних форми
+  // Стейт для зберігання даних, які вводить користувач
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    projectType: "",
-    message: "",
+    firstName: "", // ім'я
+    lastName: "", // прізвище
+    email: "", // email
+    phone: "", // телефон
+    projectType: "", // тип проєкту
+    message: "", // повідомлення
   });
 
-  // Стейт для зберігання повідомлень про помилки
+  // Стейт для зберігання помилок валідації
   const [errors, setErrors] = useState({});
+
   // Стейт для показу/приховання списку типів проектів
   const [show, setShow] = useState(false);
 
-  // Показати/сховати меню вибору проекту
+  // Функція для показу або приховання меню вибору проекту
   const showMenu = (e) => {
-    e.preventDefault();
-    setShow((prev) => !prev);
+    e.preventDefault(); // Блокуємо стандартну поведінку кнопки
+    setShow((prev) => !prev); // Перемикаємо стан show на true/false
   };
 
-  // Обробка вибору типу проекту
+  // Обробка вибору типу проекту з меню
   const handleProjectSelect = (value) => {
-    setFormData({ ...formData, projectType: value });
+    setFormData({ ...formData, projectType: value }); // Записуємо вибраний тип проекту
     setShow(false); // Закриваємо меню після вибору
   };
 
-  // Масив типів проектів
+  // Можливі варіанти типів проектів
   const projects = ["E-Commerce", "SaaS", "Landing page", "Інше"];
 
-  // Функція валідації форми
+  // Функція перевірки введених даних (валідація)
   const validate = () => {
-    let tempErrors = {};
+    let tempErrors = {}; // тимчасовий об'єкт для помилок
 
-    // Перевірка firstName
+    // Перевірка поля firstName
     if (!formData.firstName) {
       tempErrors.firstName = "Ім'я є обов'язковим.";
     } else if (formData.firstName.length < 2) {
@@ -66,23 +67,25 @@ const ContactForm = () => {
       tempErrors.projectType = "Тип проєкту є обов'язковим.";
     }
 
-    setErrors(tempErrors);
-    return Object.keys(tempErrors).length === 0; // true, якщо помилок немає
+    setErrors(tempErrors); // Зберігаємо помилки в стейт
+    return Object.keys(tempErrors).length === 0; // Повертаємо true, якщо помилок немає
   };
 
-  // Обробка змін у полях форми
+  // Функція для обробки змін у полях форми
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    // Оновлюємо конкретне поле (firstName, lastName, email тощо)
   };
 
-  // Обробка відправки форми
+  // Функція для обробки натискання кнопки "Відправити"
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Блокуємо стандартне оновлення сторінки
     if (validate()) {
-      console.log("Form data submitted:", formData);
-      alert("Заявка відправлена!");
+      // Якщо форма пройшла валідацію
+      console.log("Form data submitted:", formData); // Виводимо дані у консоль
+      alert("Заявка відправлена!"); // Повідомлення користувачу
     } else {
-      console.log("Form has errors.");
+      console.log("Form has errors."); // Якщо є помилки — виводимо в консоль
     }
   };
 
@@ -90,7 +93,7 @@ const ContactForm = () => {
     <form className={styles.contactForm} onSubmit={handleSubmit}>
       <h2>Залиште заявку</h2>
 
-      {/* Ряд для імені та прізвища */}
+      {/* Рядок для введення імені та прізвища */}
       <div className={styles.formRow}>
         <div className={styles.formField}>
           <span>
@@ -102,7 +105,7 @@ const ContactForm = () => {
             name="firstName"
             placeholder="Ваше ім'я"
             value={formData.firstName}
-            onChange={handleChange}
+            onChange={handleChange} // Оновлення стейту при введенні
           />
           {errors.firstName && (
             <span className={styles.errorMessage}>{errors.firstName}</span>
@@ -119,7 +122,7 @@ const ContactForm = () => {
             name="lastName"
             placeholder="Ваше прізвище"
             value={formData.lastName}
-            onChange={handleChange}
+            onChange={handleChange} // Оновлення стейту при введенні
           />
           {errors.lastName && (
             <span className={styles.errorMessage}>{errors.lastName}</span>
@@ -127,7 +130,7 @@ const ContactForm = () => {
         </div>
       </div>
 
-      {/* Email */}
+      {/* Поле Email */}
       <label htmlFor="email">Email</label>
       <input
         type="email"
@@ -141,7 +144,7 @@ const ContactForm = () => {
         <span className={styles.errorMessage}>{errors.email}</span>
       )}
 
-      {/* Телефон */}
+      {/* Поле Телефон */}
       <label htmlFor="phone">Телефон</label>
       <input
         type="tel"
@@ -165,13 +168,13 @@ const ContactForm = () => {
           <span className={styles.errorMessage}>{errors.projectType}</span>
         )}
 
-        {/* Список варіантів */}
+        {/* Випадаючий список */}
         <div className={`${styles.optionContainer} ${show ? styles.open : ""}`}>
           {projects.map((opt) => (
             <div
               key={opt}
               className={styles.option}
-              onClick={() => handleProjectSelect(opt)}
+              onClick={() => handleProjectSelect(opt)} // Обираємо проект
             >
               {opt}
             </div>
@@ -179,7 +182,7 @@ const ContactForm = () => {
         </div>
       </div>
 
-      {/* Повідомлення */}
+      {/* Поле для повідомлення */}
       <label htmlFor="message">Повідомлення</label>
       <textarea
         id="message"
@@ -200,4 +203,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default ContactForm; // Експорт компонента для використання в інших файлах

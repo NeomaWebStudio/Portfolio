@@ -1,59 +1,59 @@
 // src/components/ContactInfo.module.scss
 .contactInfo {
-  color: #f8fafc;
+  color: #f8fafc; // Колір тексту всередині блоку
 
   // 🔹 Блок переваг компанії
   .advantagesContainer {
-    background-color: #1e293b;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #334155;
+    background-color: #1e293b; // Темний фон блоку
+    padding: 20px; // Внутрішні відступи
+    border-radius: 8px; // Закруглені кути
+    margin-bottom: 20px; // Відстань знизу від наступного блоку
+    border: 1px solid #334155; // Рамка навколо блоку
   }
 
   h2 {
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 24px; // Розмір заголовка
+    font-weight: 500; // Трохи товстіший шрифт
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 20px; // Відступ знизу
   }
 
   .advantagesList {
-    list-style-type: none;
+    list-style-type: none; // Прибираємо стандартні булети
     padding: 0;
     margin: 0;
 
     li {
-      margin-bottom: 10px;
+      margin-bottom: 10px; // Відстань між пунктами
       font-size: 15px;
-      color: #94a3b8;
+      color: #94a3b8; // Світло-сірий колір тексту
 
       &::before {
-        content: "•";
-        color: #ff6b35;
+        content: "•"; // Вставляємо свій маркер
+        color: #ff6b35; // Помаранчевий колір маркера
         font-size: 20px;
         line-height: 0;
-        margin-right: 10px;
-        vertical-align: middle;
+        margin-right: 10px; // Відстань від маркера до тексту
+        vertical-align: middle; // Вирівнювання маркера по середині
       }
     }
   }
 
   // 🔹 Блок контактних карток
   .infoCards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-    align-items: stretch;
+    display: grid; // Робимо сітку для карток
+    grid-template-columns: 1fr; // Спочатку одна колонка
+    gap: 15px; // Відстань між картками
+    align-items: stretch; // Вирівнювання карток по висоті
 
     .card {
-      background-color: #1e293b;
+      background-color: #1e293b; // Темний фон картки
       padding: 20px;
       border-radius: 8px;
-      text-align: center;
+      text-align: center; // Центруємо текст
       border: 1px solid #334155;
       height: 100%;
-      min-width: 150px;
+      min-width: 150px; // Мінімальна ширина картки
 
       .iconCircle {
         display: inline-flex;
@@ -61,13 +61,13 @@
         align-items: center;
         width: 50px;
         height: 50px;
-        border-radius: 50%;
-        background-color: rgba(255, 107, 53, 0.2);
-        margin-bottom: 10px;
+        border-radius: 50%; // Коло
+        background-color: rgba(255, 107, 53, 0.2); // Світлий фон для іконки
+        margin-bottom: 10px; // Відстань до тексту
       }
 
       .icon {
-        color: #ff6b35;
+        color: #ff6b35; // Помаранчева іконка
         font-size: 24px;
       }
 
@@ -77,20 +77,20 @@
         color: #94a3b8;
 
         &:first-of-type {
-          font-weight: bold;
+          font-weight: bold; // Перший абзац жирний (назва)
           margin-bottom: 5px;
-          color: #f8fafc;
+          color: #f8fafc; // Світлий текст
         }
       }
 
       a {
-        color: #94a3b8;
+        color: #94a3b8; // Колір посилання
         text-decoration: none;
         font-size: 14px;
       }
 
       .cta {
-        margin-top: 5px;
+        margin-top: 5px; // Відстань до попереднього елемента
         font-size: 12px;
         color: #94a3b8;
       }
@@ -100,7 +100,7 @@
   // 🔹 Ховер для посилань в картках
   .card a {
     &:hover {
-      text-decoration: underline;
+      text-decoration: underline; // Підкреслення при наведенні
     }
   }
 }
@@ -109,7 +109,7 @@
 @media (min-width: 480px) {
   .contactInfo {
     .infoCards {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr); // Дві колонки карток
     }
   }
 }
@@ -118,16 +118,16 @@
 @media (max-width: 768px) {
   .contactInfo {
     .advantagesContainer {
-      width: 80%;
-      margin: 0 auto;
-      margin-bottom: 20%;
+      width: 80%; // Вужчий блок
+      margin: 0 auto; // Центрування
+      margin-bottom: 20%; // Великий відступ знизу
 
       .infoCards {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr); // Одна колонка карток
 
         .card {
-          min-width: 80%;
-          margin: 0, auto;
+          min-width: 80%; // Вужча картка
+          margin: 0, auto; // Центрування картки
         }
       }
     }
