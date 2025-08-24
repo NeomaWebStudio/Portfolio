@@ -1,7 +1,7 @@
 // src/components/ContactForm.jsx
 "use client"; // Для Next.js: вказуємо, що цей компонент працює на клієнті (браузері)
 import React, { useState } from "react"; // Імпортуємо React та useState для стейтів
-import styles from "./ContactForm.module.scss"; // Імпортуємо CSS модуль для стилів
+import styles from "../contactPage/contactFormStyle/css/ContactForm.module.css"; // Імпортуємо CSS модуль для стилів
 
 const ContactForm = () => {
   // Стейт для зберігання даних, які вводить користувач

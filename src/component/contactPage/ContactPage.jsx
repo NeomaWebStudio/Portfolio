@@ -3,7 +3,7 @@
 import React from "react"; // Імпортуємо React для створення компонентів
 import ContactForm from "./ContactForm"; // Імпортуємо компонент форми
 import ContactInfo from "./ContactInfo"; // Імпортуємо компонент контактної інформації
-import styles from "./ContactPage.module.scss"; // Імпортуємо CSS-модуль для стилів
+import styles from "../contactPage/contactPageStyle/css/ContactPage.module.css"; // Імпортуємо CSS-модуль для стилів
 
 const ContactPage = () => {
   return (

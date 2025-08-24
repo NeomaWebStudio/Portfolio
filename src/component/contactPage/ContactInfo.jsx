@@ -1,6 +1,6 @@
 // src/app/components/ContactInfo.jsx
 import React from "react"; // Імпортуємо React для створення компонентів
-import styles from "./ContactInfo.module.scss"; // Імпортуємо CSS-модуль для стилів
+import styles from "../contactPage/contactInfoStyle/css/ContactInfo.module.css"; // Імпортуємо CSS-модуль для стилів
 // Іконки для відображення контактів
 import { FaRegEnvelope, FaRegClock } from "react-icons/fa";
 import { FiPhone, FiMapPin } from "react-icons/fi";

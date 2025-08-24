@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
 body {
-  background-color: #0f172a;
+  /* background-color: #0f172a; */
+  background-color: #f00;
   font-family: "Poppins", sans-serif;
 }
 
@@ -15,4 +18,30 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+
+/* {
+  --neomaOrange: #FFB84D;
+  --neomaPink: #FF6B9D;
+  --neomaPurple: #A855F7;
+  --neomaBlue: #4F9CF9;
+  --background: #0F172A;
+  --foreground: #f8fafc;
+  --primary: #FF6B35;
+  --secondary: #334155;
+  --muted: #334155;
+  --accent: #334155;
+		--border: #334155;
+		--neomaGradiend: linear-gradient(135deg, #FFB84D 0%, #FF6B9D 35%, #A855F7 70%, #4F9CF9 100%);
+
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--background);
 }
