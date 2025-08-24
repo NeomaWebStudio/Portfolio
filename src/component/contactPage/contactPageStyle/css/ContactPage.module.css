@@ -1,0 +1,38 @@
+.container {
+  background-color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.contactFormWrapper {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  opacity: 1;
+}
+
+.contactInfoWrapper {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .contactFormWrapper {
+    width: 48%;
+    margin: 0;
+  }
+  .contactInfoWrapper {
+    width: 48%;
+    margin: 0;
+  }
+}/*# sourceMappingURL=ContactPage.module.css.map */

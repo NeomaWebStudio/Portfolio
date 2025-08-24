@@ -1,0 +1,139 @@
+@charset "UTF-8";
+/* 1. Основні стилі форми */
+.contactForm {
+  padding: 20px;
+  background: #1e293b;
+  color: white;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contactForm h2 {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 5px 0;
+}
+.contactForm label {
+  display: block;
+  margin: 0 0 -8px 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+.contactForm input,
+.contactForm textarea {
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #334155;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #243143;
+  color: #f8fafc;
+}
+.contactForm input::-moz-placeholder, .contactForm textarea::-moz-placeholder {
+  color: #94a3b8;
+}
+.contactForm input::placeholder,
+.contactForm textarea::placeholder {
+  color: #94a3b8;
+}
+.contactForm textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+/* Рядок для полів ім'я/прізвище */
+.formRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* Контейнер для одного поля форми */
+.formField {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.formField span {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Контейнер для вибору типу проекту */
+.projectContainer {
+  position: relative;
+}
+
+/* Стиль для повідомлень про помилку */
+.errorMessage {
+  color: #ff3535;
+  font-size: 12px;
+  margin-top: 1px;
+  text-align: left;
+}
+
+/* 2. Кнопки */
+.submitButton {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 18px;
+  background-color: #ff6b35;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.submitButton:hover {
+  background-color: #e96436;
+}
+
+.selectPole {
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #334155;
+  width: 100%;
+  margin-top: 8px;
+  box-sizing: border-box;
+  background-color: #243143;
+  color: #f8fafc;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+}
+.selectPole:hover {
+  background-color: #374151;
+}
+.selectPole:focus {
+  border: 2px solid #ff6b35;
+}
+
+/* 3. Список опцій (випадаючий) */
+.optionContainer {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
+}
+.optionContainer.open {
+  border: 1px solid #334155;
+  max-height: 200px;
+  padding: 5px 0;
+}
+
+.option {
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #f8fafc;
+}
+.option:hover {
+  background-color: #374151;
+}
+
+/* 4. Фокус для input та textarea */
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 2px solid #ff6b35;
+}/*# sourceMappingURL=ContactForm.module.css.map */
