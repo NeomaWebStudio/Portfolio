@@ -1,0 +1,256 @@
+@use "sass:list";
+
+// -------------------- 🎨 ЗМІННІ --------------------
+// Кольори та змінні для зручності перевикористання
+$dark-blue: #1e293b; // темний фон
+$light-blue: #161e31; // запасний відтінок синього
+$text-color: #94a3b8; // основний колір тексту
+$link-color: #b0c4de; // колір при ховері посилань
+$heading-colors: (
+  #ff69b4,
+  #ffb84d,
+  #ff6b9d,
+  #4f9cf9
+); // кольори для заголовків колонок
+
+// Градієнт для лого, ліній і декоративних елементів
+$neoma-gradient: linear-gradient(
+  135deg,
+  #ffb84d 0%,
+  #ff6b9d 35%,
+  #a855f7 70%,
+  #4f9cf9 100%
+);
+
+// -------------------- 🎨 ОСНОВНІ СТИЛІ --------------------
+.footer {
+  background-color: $dark-blue; // фон футера
+  color: $text-color; // текст футера
+  padding: 4rem 2rem 2rem; // внутрішні відступи
+  font-family: Arial, sans-serif; // шрифт
+  border-top: 1px solid #334155; // верхня рамка
+  animation: fade-in-up 1.2s ease-out; // анімація появи футера
+
+  .footerContent {
+    display: flex; // розташування колонок
+    justify-content: space-between; // відстань між ними
+    max-width: 1200px; // ширина контейнера
+    margin: 0 auto; // центрування
+    gap: 2rem; // відстань між колонками
+    flex-wrap: wrap; // перенос колонок на новий ряд при потребі
+
+    .column {
+      flex: 1; // кожна колонка займає рівний простір
+
+      &:first-child {
+        flex: 1.5; // перша колонка ширша
+
+        h4 {
+          // стиль логотипу або заголовка з градієнтом
+          background: $neoma-gradient;
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;
+          font-size: 21px;
+          margin-bottom: 1rem;
+          font-weight: bold;
+          animation: gradient-animation 8s ease-in-out infinite; // перелив градієнта
+        }
+
+        p {
+          font-size: 0.9rem; // дрібніший текст
+          line-height: 1.6; // міжрядковий інтервал
+          max-width: 300px; // обмеження ширини
+          margin-top: 1rem;
+        }
+      }
+
+      h3 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      // Додаємо різні кольори для кожного заголовка (2–4 колонка)
+      @for $i from 2 through 4 {
+        &:nth-child(#{$i}) h3 {
+          color: list.nth($heading-colors, $i);
+        }
+      }
+    }
+
+    .linkList {
+      list-style: none; // прибираємо маркери
+      padding: 0;
+      display: flex;
+      flex-direction: column; // вертикальний список
+      gap: 0.5rem; // відстань між посиланнями
+
+      .linkItem {
+        font-size: 0.9rem;
+        cursor: pointer; // вказівник при наведенні
+        position: relative;
+        width: fit-content; // ширина дорівнює ширині тексту
+        transition: color 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+          color: $link-color;
+          transform: translateY(-2px); // плавний підйом при ховері
+        }
+
+        &::after {
+          // підкреслення-градієнт, яке з’являється при ховері
+          content: "";
+          width: 100%;
+          height: 2px;
+          background: $neoma-gradient;
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          transform: scaleX(0); // приховано
+          transform-origin: left center;
+          transition: transform 0.25s linear;
+        }
+
+        &:hover::after {
+          transform: scaleX(1); // з’являється підкреслення
+        }
+      }
+    }
+
+    .socialIcons {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+
+      a {
+        // стилі для соц. іконок
+        color: $text-color;
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        padding: 0.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        box-sizing: border-box;
+
+        &:hover {
+          transform: translateY(-3px); // легкий підйом
+          color: $link-color; // зміна кольору
+          border-color: $link-color;
+        }
+      }
+    }
+  }
+
+  .divider {
+    // лінія між основним футером і нижнім блоком
+    max-width: 1200px;
+    margin: 2rem auto;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .footerBottom {
+    // нижній рядок футера
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+
+    .backToTop {
+      // кнопка повернутись угору
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+        border-color: $link-color;
+      }
+
+      svg,
+      path {
+        color: $text-color;
+        font-size: 24px;
+        transition: color 0.3s ease;
+      }
+
+      &:hover svg,
+      &:hover path {
+        color: $link-color;
+      }
+    }
+  }
+}
+
+// -------------------- 🎞 АНІМАЦІЇ --------------------
+// Анімація градієнта (переливання кольорів)
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Анімація появи футера знизу
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// -------------------- 📱 АДАПТИВНІСТЬ --------------------
+@media (max-width: 768px) {
+  .footer {
+    .footerContent {
+      flex-direction: column; // колонки в один стовпчик
+      align-items: center;
+      text-align: center;
+
+      .column {
+        margin-bottom: 2rem;
+        width: 100%;
+      }
+
+      .linkList {
+        align-items: center;
+      }
+
+      .socialIcons {
+        justify-content: center;
+      }
+    }
+
+    .footerBottom {
+      flex-direction: column; // перенос елементів вниз
+      text-align: center;
+      gap: 1rem;
+    }
+  }
+}
