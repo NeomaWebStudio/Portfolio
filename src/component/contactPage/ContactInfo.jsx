@@ -1,78 +1,96 @@
-// src/app/components/ContactInfo.jsx
-import React from "react"; // Імпортуємо React для створення компонентів
-import styles from "../contactPage/contactInfoStyle/css/ContactInfo.module.css"; // Імпортуємо CSS-модуль для стилів
-// Іконки для відображення контактів
+// src/components/ContactInfo.js
+import React from "react";
+import styles from "./contactInfoStyle/css/ContactInfo.module.css";
 import { FaRegEnvelope, FaRegClock } from "react-icons/fa";
 import { FiPhone, FiMapPin } from "react-icons/fi";
+import { motion } from "framer-motion";
+
+const animateCard = {
+  hidden: (i) => ({
+    opacity: 0,
+    x: i % 2 === 0 ? 100 : -100, // парні (0,2) — зправа, непарні (1,3) — зліва
+  }),
+  visible: (i) => ({
+    opacity: 1,
+    x: [i % 2 === 0 ? 100 : -100, 0, i % 2 === 0 ? -20 : 20, 0], // переліт + відскок
+    transition: { duration: 1, ease: "easeInOut" },
+  }),
+};
+
+// ВАЖЛИВО: staggerChildren усередині variants батька
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.3,   // інтервал між картками
+      // delayChildren: 0.1,  //  затримка перед першою
+    },
+  },
+};
 
 const ContactInfo = () => {
   return (
     <div className={styles.contactInfo}>
-      {/* ==========================
-          Блок переваг компанії
-      ========================= */}
       <div className={styles.advantagesContainer}>
         <h2>Наші переваги</h2>
-        <ul className={styles.advantagesList}>
-          <li>Безкоштовна консультація</li>
-          <li>Гнучкі умови співпраці</li>
-          <li>Підтримка після запуску</li>
-          <li>Сучасні технології</li>
-        </ul>
+        <motion.ul className={styles.advantagesList}
+									variants={container}
+        initial="hidden"
+        whileInView="visible"           // тригеримо всі картки разом коли контейнер у в'ю
+        viewport={{ once: true, amount: 0.2 }}
+								>
+          <motion.li
+											variants={animateCard} custom={1}
+										>Безкоштовна консультація</motion.li>
+          <motion.li
+											variants={animateCard} custom={1}
+										>Гнучкі умови співпраці</motion.li>
+          <motion.li
+											variants={animateCard} custom={1}
+										>Підтримка після запуску</motion.li>
+          <motion.li
+											variants={animateCard} custom={1}
+										>Сучасні технології</motion.li>
+        </motion.ul>
       </div>
 
-      {/* ==========================
-          Блок контактних карток
-      ========================= */}
-      <div className={styles.infoCards}>
-        {/* Картка Email */}
-        <div className={styles.card}>
-          <div className={styles.iconCircle}>
-            {/* Іконка конверта */}
-            <FaRegEnvelope className={styles.icon} />
-          </div>
+      <motion.div
+        className={styles.infoCards}
+        variants={container}
+        initial="hidden"
+        whileInView="visible"           // тригеримо всі картки разом коли контейнер у в'ю
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.div className={styles.card} variants={animateCard} custom={0}>
+          <div className={styles.iconCircle}><FaRegEnvelope className={styles.icon} /></div>
           <p>Email</p>
-          {/* Посилання для відправки листа */}
           <a href="mailto:info@neomawebstudio.com">info@neomawebstudio.com</a>
           <p className={styles.cta}>Написати нам</p>
-        </div>
+        </motion.div>
 
-        {/* Картка Телефон */}
-        <div className={styles.card}>
-          <div className={styles.iconCircle}>
-            {/* Іконка телефону */}
-            <FiPhone className={styles.icon} />
-          </div>
+        <motion.div className={styles.card} variants={animateCard} custom={1}>
+          <div className={styles.iconCircle}><FiPhone className={styles.icon} /></div>
           <p>Телефон</p>
-          {/* Посилання для дзвінка */}
           <a href="tel:+380951234567">+380 (95) 123-45-67</a>
           <p className={styles.cta}>Подзвонити</p>
-        </div>
+        </motion.div>
 
-        {/* Картка Адреса */}
-        <div className={styles.card}>
-          <div className={styles.iconCircle}>
-            {/* Іконка мітки для адреси */}
-            <FiMapPin className={styles.icon} />
-          </div>
+        <motion.div className={styles.card} variants={animateCard} custom={2}>
+          <div className={styles.iconCircle}><FiMapPin className={styles.icon} /></div>
           <p>Адреса</p>
           <p>Київ, Україна</p>
           <p className={styles.cta}>Головний офіс</p>
-        </div>
+        </motion.div>
 
-        {/* Картка Робочі години */}
-        <div className={styles.card}>
-          <div className={styles.iconCircle}>
-            {/* Іконка годинника */}
-            <FaRegClock className={styles.icon} />
-          </div>
+        <motion.div className={styles.card} variants={animateCard} custom={3}>
+          <div className={styles.iconCircle}><FaRegClock className={styles.icon} /></div>
           <p>Робочі години</p>
           <p>Пн-Пт: 9:00-18:00</p>
           <p className={styles.cta}>Київський час</p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
 
-export default ContactInfo; // Експортуємо компонент, щоб його можна було використовувати в інших файлах
+export default ContactInfo;
