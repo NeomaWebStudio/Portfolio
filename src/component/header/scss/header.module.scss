@@ -11,6 +11,8 @@
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+		position: relative;
+		z-index: 1;
 
   .headerInnerContainer {
     display: flex;
@@ -104,6 +106,14 @@
       }
     }
   }
+		.iconContainer{
+			position: absolute;
+			z-index: -1;
+		}
+		.fistIcon{
+			margin-left: 50px;
+			margin-top: 30px;
+		}
 }
 
 .dark {

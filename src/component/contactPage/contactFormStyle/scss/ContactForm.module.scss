@@ -40,7 +40,7 @@
   }
 
   textarea {
-    resize: vertical; // Користувач може змінювати висоту textarea
+    resize:none; // Користувач може змінювати висоту textarea
     min-height: 100px; // Мінімальна висота textarea
   }
 }
