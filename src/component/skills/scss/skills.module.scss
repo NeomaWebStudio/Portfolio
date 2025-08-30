@@ -1,0 +1,125 @@
+.sectionContainer{
+    // padding: 40px 140px;
+    background-color: #0F172A;
+    height: 100vh;
+    color: white;
+
+    .titleContainer{
+        text-align: center;
+    
+        .title{
+            font-size: 32px;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        .descStack{
+            color: lightgrey;
+            font-size: 18px;
+            margin: 0;
+            margin-bottom: 60px;
+        }
+    }
+    .swapComponent{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 260px;
+        background-color: #334155;
+        border-radius: 13px;
+        margin-bottom: 35px;
+        .tab{
+            position: relative;
+            color: lightgrey;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .tabActive{
+            color: white;
+        }
+        .activeTabIndicator{
+            position: absolute;
+            left: 0;                       
+            right: 0;
+            bottom: -2px;                   
+            height: 3px;
+            background: #ff6b35;
+            border-radius: 10px;
+            box-shadow: 0 0 8px #ff6b35;
+        }
+    }
+    .typeContainer{
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+
+
+
+
+@media (min-width: 320px){
+    .sectionContainer{
+        padding: 40px 22px;
+         .swapComponent{
+            padding: 10px 10px;
+        }
+    }
+}
+@media (min-width: 400px){
+    .sectionContainer{
+        padding: 40px 25px;
+         .swapComponent{
+            padding: 10px 50px;
+        }
+    }
+}
+
+@media (min-width: 640px){
+    .sectionContainer{
+        padding: 40px 25px;
+         .swapComponent{
+            padding: 10px 100px;
+        }
+    }
+}
+
+@media (min-width: 768px){
+    .sectionContainer{
+        padding: 40px 120px;
+         .swapComponent{
+            padding: 10px 100px;
+        }
+    }
+}
+
+
+@media (min-width: 960px){
+    .sectionContainer{
+        padding: 40px 165px;
+         .swapComponent{
+            padding: 10px 100px;
+        }
+    }
+}
+
+@media (min-width: 1024px){
+    .sectionContainer{
+        padding: 40px 196px;
+         .swapComponent{
+            padding: 10px 100px;
+        }
+    }
+}
+@media (min-width: 1280px){
+    .sectionContainer{
+        padding: 40px 210px;
+        .swapComponent{
+            padding: 10px 170px;
+        }
+    }
+}
+@media (min-width: 1920px){
+    .sectionContainer{
+        padding: 40px 400px;
+    }
+}

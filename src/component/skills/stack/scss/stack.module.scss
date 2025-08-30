@@ -1,0 +1,45 @@
+
+.componentContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    
+}
+.stackContainer{
+    border: 1px solid rgba(255, 153, 120, 0.2);
+    border-radius: 15px;
+    background-color: #1e293b;
+    padding: 20px;
+    width: 100%;
+    // height: 400px; прибрав для комфортної роботи
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    
+    .titleStack{
+        margin: 0;
+    }
+}  
+
+.frameContainer{
+    border: 1px solid rgba(255, 153, 120, 0.2);
+    border-radius: 15px;
+    background-color: #1e293b;
+    padding: 20px;
+    width: 100%;
+    // height: 400px; забрав для нормальної роботи
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1024px){
+    .componentContainer{
+        flex-direction: column;
+        justify-content: center;
+    }
+}

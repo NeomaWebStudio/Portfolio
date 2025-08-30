@@ -1,0 +1,28 @@
+.teamContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+.teamContainer .title {
+  font-size: 35px;
+  background: linear-gradient(135deg, #ffb84d 0%, #ff6b9d 35%, #a855f7 70%, #4f9cf9 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: gradientMove 5s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}/*# sourceMappingURL=team.module.css.map */

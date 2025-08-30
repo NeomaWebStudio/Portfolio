@@ -1,0 +1,44 @@
+.pieContainer {
+  position: relative;
+  width: 588px;
+  height: 485px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 10px;
+}
+.pieContainer .title {
+  color: white;
+  position: absolute;
+  top: 23;
+  left: 23;
+}
+.pieContainer .pie {
+  width: 400px;
+  height: 480px;
+}
+
+@media (max-width: 640px) {
+  .pieContainer {
+    width: 440px;
+    height: 320px;
+  }
+  .pieContainer .pie {
+    width: 300px;
+    height: 280px;
+  }
+}
+@media (max-width: 450px) {
+  .pieContainer {
+    width: 240px;
+    height: 220px;
+  }
+  .pieContainer .pie {
+    width: 240px;
+    height: 180px;
+  }
+}/*# sourceMappingURL=typeProject.module.css.map */

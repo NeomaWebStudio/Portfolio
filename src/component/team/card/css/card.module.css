@@ -1,0 +1,384 @@
+.cardContainer {
+  display: flex;
+  margin-top: 60px;
+}
+.cardContainer .card {
+  width: 338px;
+  height: 500px;
+  background: rgb(30, 41, 59);
+  margin: 0 30px;
+  border-radius: 12.75px;
+  line-height: 21px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.cardContainer .card:hover {
+  outline: 2px solid rgb(98, 61, 57);
+}
+.cardContainer .card:hover::before {
+  content: "";
+  width: 100%;
+  height: 225px;
+  background: linear-gradient(135deg, #ffb84d 0%, #ff6b9d 35%, #a855f7 70%, #4f9cf9 100%);
+  animation: gradientShift 15s ease infinite;
+  position: absolute;
+  z-index: 100;
+  border-radius: 12.75px 12.75px 0 0;
+  background-size: 600% 600%;
+  opacity: 0.3;
+}
+.cardContainer .card .iconsContainer {
+  position: absolute;
+  top: 185px;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 20px;
+  z-index: 100;
+  justify-content: center;
+  width: 100%;
+  flex-direction: row-reverse;
+  opacity: 0;
+}
+.cardContainer .card .iconsContainer:hover {
+  opacity: 1;
+}
+.cardContainer .card .iconsContainer .icon {
+  font-size: 30px;
+  color: rgb(199, 200, 203);
+  background-color: rgb(244, 243, 247);
+  padding: 5px;
+  border-radius: 50px;
+  width: 48px;
+  opacity: 0.7;
+}
+.cardContainer .card .img {
+  background-image: url("/homkaAvatar.png") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 223px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: whitesmoke;
+  border-radius: 12.75px 12.75px 0 0;
+  margin-bottom: 45px;
+}
+.cardContainer .card .info {
+  padding-left: 20px;
+}
+.cardContainer .card .info .titleCard {
+  color: rgb(248, 250, 234);
+}
+.cardContainer .card .info .role {
+  color: rgb(255, 184, 77);
+  margin-top: 15px;
+}
+.cardContainer .card .info .description {
+  color: rgb(144, 163, 184);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.cardContainer .card .info .list {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  justify-content: start;
+  flex-wrap: wrap;
+  float: left;
+}
+.cardContainer .card .info .list .listpunkt {
+  --border-size: 2px;
+  position: relative;
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 12px;
+  color: transparent;
+  background: linear-gradient(135deg, #ffb84d 0%, #ff6b9d 35%, #a855f7 70%, #4f9cf9 100%);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientShift 6s ease infinite;
+}
+.cardContainer .card .info .list .listpunkt::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50px;
+  padding: var(--border-size);
+  background: linear-gradient(135deg, #ffb84d 0%, #ff6b9d 35%, #a855f7 70%, #4f9cf9 100%);
+  background-size: 600% 600%;
+  z-index: 1;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: gradientShift 6s ease infinite;
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.cardContainer .cardTwo {
+  width: 338px;
+  height: 500px;
+  background: rgb(30, 41, 59);
+  margin: 0 30px;
+  border-radius: 12.75px;
+  line-height: 21px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.cardContainer .cardTwo:hover {
+  outline: 2px solid rgb(98, 61, 57);
+}
+.cardContainer .cardTwo:hover::before {
+  content: "";
+  width: 100%;
+  height: 225px;
+  background: linear-gradient(135deg, #ffb84d 0%, #ff6b9d 35%, #a855f7 70%, #4f9cf9 100%);
+  animation: gradientShift 15s ease infinite;
+  position: absolute;
+  z-index: 100;
+  border-radius: 12.75px 12.75px 0 0;
+  background-size: 600% 600%;
+  opacity: 0.3;
+}
+.cardContainer .cardTwo .iconsContainer {
+  position: absolute;
+  top: 185px;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 20px;
+  z-index: 100;
+  justify-content: center;
+  width: 100%;
+  flex-direction: row-reverse;
+  opacity: 0;
+}
+.cardContainer .cardTwo .iconsContainer:hover {
+  opacity: 1;
+}
+.cardContainer .cardTwo .iconsContainer .icon {
+  font-size: 30px;
+  color: rgb(199, 200, 203);
+  background-color: rgb(244, 243, 247);
+  padding: 5px;
+  border-radius: 50px;
+  width: 48px;
+  opacity: 0.7;
+}
+.cardContainer .cardTwo .imgTwo {
+  width: 100%;
+  height: 223px;
+  background-color: whitesmoke;
+  border-radius: 12.75px 12.75px 0 0;
+  margin-bottom: 45px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cardContainer .cardTwo .infoTwo {
+  padding-left: 20px;
+}
+.cardContainer .cardTwo .infoTwo .titleCardTwo {
+  color: rgb(248, 250, 234);
+}
+.cardContainer .cardTwo .infoTwo .roleTwo {
+  color: rgb(255, 107, 157);
+  margin-top: 15px;
+}
+.cardContainer .cardTwo .infoTwo .descriptionTwo {
+  color: rgb(144, 163, 184);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.cardContainer .cardTwo .infoTwo .listTwo {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  justify-content: start;
+  flex-wrap: wrap;
+  float: left;
+}
+.cardContainer .cardTwo .infoTwo .listTwo .listpunktTwo {
+  --border-size: 2px;
+  position: relative;
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 12px;
+  color: transparent;
+  background: linear-gradient(135deg, #ffb84d 0%, #ff6b9d 35%, #a855f7 70%, #4f9cf9 100%);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientShift 6s ease infinite;
+}
+.cardContainer .cardTwo .infoTwo .listTwo .listpunktTwo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50px;
+  padding: var(--border-size);
+  background: linear-gradient(135deg, #ffb84d 0%, #ff6b9d 35%, #a855f7 70%, #4f9cf9 100%);
+  background-size: 600% 600%;
+  z-index: 1;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: gradientShift 6s ease infinite;
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.cardContainer .cardThree {
+  width: 338px;
+  height: 500px;
+  background: rgb(30, 41, 59);
+  margin: 0 30px;
+  border-radius: 12.75px;
+  line-height: 21px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.cardContainer .cardThree:hover {
+  outline: 2px solid rgb(98, 61, 57);
+}
+.cardContainer .cardThree:hover::before {
+  content: "";
+  width: 100%;
+  height: 225px;
+  background: linear-gradient(135deg, #ffb84d 0%, #ff6b9d 35%, #a855f7 70%, #4f9cf9 100%);
+  animation: gradientShift 15s ease infinite;
+  position: absolute;
+  z-index: 100;
+  border-radius: 12.75px 12.75px 0 0;
+  background-size: 600% 600%;
+  opacity: 0.3;
+}
+.cardContainer .cardThree .iconsContainer {
+  position: absolute;
+  top: 185px;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 20px;
+  z-index: 100;
+  justify-content: center;
+  width: 100%;
+  flex-direction: row-reverse;
+  opacity: 0;
+}
+.cardContainer .cardThree .iconsContainer:hover {
+  opacity: 1;
+}
+.cardContainer .cardThree .iconsContainer .icon {
+  font-size: 30px;
+  color: rgb(199, 200, 203);
+  background-color: rgb(244, 243, 247);
+  padding: 5px;
+  border-radius: 50px;
+  width: 48px;
+  opacity: 0.7;
+}
+.cardContainer .cardThree .imgThree {
+  width: 100%;
+  height: 223px;
+  background-color: whitesmoke;
+  border-radius: 12.75px 12.75px 0 0;
+  margin-bottom: 45px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+}
+.cardContainer .cardThree .infoThree {
+  padding-left: 20px;
+}
+.cardContainer .cardThree .infoThree .titleCardThree {
+  color: rgb(248, 250, 234);
+}
+.cardContainer .cardThree .infoThree .roleThree {
+  color: rgb(79, 156, 249);
+  margin-top: 15px;
+}
+.cardContainer .cardThree .infoThree .descriptionThree {
+  color: rgb(144, 163, 184);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.cardContainer .cardThree .infoThree .listThree {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  justify-content: start;
+  flex-wrap: wrap;
+  float: left;
+}
+.cardContainer .cardThree .infoThree .listThree .listpunktThree {
+  --border-size: 2px;
+  position: relative;
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 12px;
+  color: transparent;
+  background: linear-gradient(135deg, #ffb84d 0%, #ff6b9d 35%, #a855f7 70%, #4f9cf9 100%);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientShift 6s ease infinite;
+}
+.cardContainer .cardThree .infoThree .listThree .listpunktThree::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50px;
+  padding: var(--border-size);
+  background: linear-gradient(135deg, #ffb84d 0%, #ff6b9d 35%, #a855f7 70%, #4f9cf9 100%);
+  background-size: 600% 600%;
+  z-index: 1;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: gradientShift 6s ease infinite;
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}/*# sourceMappingURL=card.module.css.map */

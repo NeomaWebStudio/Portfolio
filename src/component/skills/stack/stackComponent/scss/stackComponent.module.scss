@@ -1,0 +1,50 @@
+.stackLineContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .lineContainer{
+        width: 100%;
+        background-color: #4b353a;
+        border-radius: 30px;
+        height: 7px;
+        
+        .line{
+            position: relative;
+            background-color: #ff6b35;
+            border-radius: 30px;
+            height: 7px;
+            .percent{
+                position: absolute;
+                bottom: 18;
+                right: 0;
+                opacity: 0;
+            }
+            .percentVisible{
+                opacity: 1;
+                animation: percent 3s ease-in;
+            }
+        }
+        
+    }
+}
+
+.frameworkContainer{
+    padding: 10px;
+    background-color: #334155;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s linear;
+    &:hover{
+        background-color: #ff5c1c;
+    }
+}
+
+@keyframes percent {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+}
